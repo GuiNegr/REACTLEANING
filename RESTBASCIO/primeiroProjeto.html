@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REACT </title>
+
+</head>
+
+<body>
+
+  <!--PARA CONSEGUIR RENDERIZAR SEU APP NECESSITA DE UMA DIV PRINCIPAL PARA ISSO-->
+  <div id="root">
+
+    <script type="text/babel">
+
+
+      function Button() {
+        const [total, setTotal] = React.useState(0)
+        return <button onClick={() => setTotal(total + 3)}> click em mim {total} </button>
+      }
+
+
+      //isso é o JSX que é a manipulação de retorno do JS em react o JS vira seu html
+      function App() {
+        return <div>
+          <h1>Aplicativo react</h1>
+          <Button />
+        </div>;
+      }
+
+      // aqui o react ta criando seu proprio root para inclementar e conseguir ficar visivel o nosso App
+      const container = document.getElementById("root")
+      const root = ReactDOM.createRoot(container)
+      root.render(<App />)
+    </script>
+
+  </div>
+
+
+</body>
+
+</html>
